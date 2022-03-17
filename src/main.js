@@ -413,7 +413,7 @@ function setCountDown(numberOfSeconds) {
     if (countDown <= 0) {
       clearInterval(interval);
       alert(
-        "You ran out of time! \n Please click Ok to submit your results or refresh to start over."
+        "Please click Ok if you want to submit your results or refresh to start over."
       );
     } else {
       countDown--;
