@@ -181,7 +181,6 @@ let styleEffects = (selector) => {
         "style",
         "list-style: none; background-color: #b854a9; border: 4px solid #9c989c; border-radius: 15px; color: white; padding: 12px 12px; text-align: center; font-size: 25px; margin-bottom: 15px; transition: all 0.1s ease-out"
       );
-      console.log(event.target.id);
     });
   }
   for (i = 0; i < selector.length; i++) {
@@ -214,7 +213,6 @@ function startQuiz() {
     }
   }
 
-  console.log(quizQuestion1[i], i);
   sectionFirstH1.innerHTML = `<pre>${quizQuestion1[0]}</pre> ${quizQuestion1[1]}`;
   sectionFirstLi1.textContent = quizQuestion1[2];
   sectionFirstLi2.textContent = quizQuestion1[3];
@@ -229,7 +227,6 @@ function startQuiz() {
       highScore += 5;
       sectionFirstParagraph.textContent = "Correct answer!";
       answerInterval();
-      console.log("added points");
     } else {
       sectionFirstParagraph.textContent = "Incorrect answer! Keep Trying!";
       answerInterval();
@@ -365,7 +362,6 @@ function renderResults() {
   sectionSecond.appendChild(sectionSecondH1);
   sectionSecond.appendChild(sectionSecondOl);
 
-  console.log("highscore", highScore);
   sectionFirstH1.textContent = `${Object.keys(
     highScoresObject
   )} your current highest score is ${highScore}`;
@@ -401,7 +397,6 @@ function renderResults() {
 }
 
 function renderHighScores() {
-  console.log("this");
   anchor = document.querySelector("#anchor");
   anchor.addEventListener("click", (event) => {
     event.preventDefault();
