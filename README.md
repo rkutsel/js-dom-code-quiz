@@ -35,7 +35,7 @@ THEN I can save my initials and my score
 ![start quiz](./images/startquiz.png)
 ![ask questions](./images/questions.png)
 ![time's up](./images/timesup.png)
-![scores](./images/scores.png
+![scores](./images/scores.png)
 
 ## Original Quiz Mock-Up
 
