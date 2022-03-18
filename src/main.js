@@ -7,7 +7,7 @@ let highScoresObject = {};
 const quizInitContent = {
   quizStart: [
     "Coding Quiz Challenge!",
-    "Press Start Quiz to begin. You'll have 75 seconds to answer all questions.",
+    "Press Start Quiz to begin demo quiz. You'll have 75 seconds to answer all questions. There's a ten-second penalty if you answer incorrectly, you'll see &#128512",
   ],
 };
 
@@ -102,7 +102,7 @@ sectionFirstH1.setAttribute(
 );
 sectionFirstParagraph.setAttribute(
   "style",
-  "  background-color: #b854a9; border: 2px solid #9c989c; border-radius: 15px; color: white; text-align: center; font-size: 25px; margin-bottom: 15px; "
+  "background-color: #b854a9; border: 2px solid #9c989c; border-radius: 15px; color: white; text-align: center; font-size: 25px; margin-bottom: 15px; "
 );
 sectionSecond.setAttribute("id", "second-section");
 sectionSecond.setAttribute(
@@ -111,7 +111,7 @@ sectionSecond.setAttribute(
 );
 sectionSecondParagraph.setAttribute(
   "style",
-  "display: flex; justify-content: center; color: #962686; font-size: 18px; margin: 25px;"
+  "width: 50%; display: flex; justify-content: center; color: #962686; font-size: 20px; "
 );
 sectionSecondInput.setAttribute("type", "submit");
 sectionSecondInput.setAttribute("value", "Start Quiz");
@@ -125,8 +125,8 @@ sectionSecondInput.setAttribute(
 headerAnchor.textContent = "View Highscores";
 sectionSecondInput.textContent = "Start Quiz";
 
-sectionSecondH1.textContent = quizInitContent.quizStart[0];
-sectionSecondParagraph.textContent = quizInitContent.quizStart[1];
+sectionSecondH1.innerHTML = quizInitContent.quizStart[0];
+sectionSecondParagraph.innerHTML = quizInitContent.quizStart[1];
 
 let quizTimer = document.querySelector("#timer");
 quizTimer.textContent = "Time: 75 seconds.";
