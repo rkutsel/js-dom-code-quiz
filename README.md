@@ -2,7 +2,7 @@
 
 ## Description
 
-Another homework and another attempt to make the one page app look similar to the mock-up from the user story. My approach was to hae a bare bones HTML with no elements defined. All the heavy-lifting is done in JS (JavaScript). I did that in order to demonstrate JS abilities and how it all can be self-contained. I used various DOM [selection methods](https://www.javascripttutorial.net/javascript-dom/javascript-queryselector/) to demonstrate different ways to query objects and how they can be further manipulated. Also used different styles to listen to events and do actions on them. It's worth saying that this is not the best approach and more of a round-about method to achieve user-story objective. However this approach was chosen to show different sides of JS for the sake of demonstration. [Live Page](https://rkutsel.github.io/js-dom-code-quiz/)
+Another homework and another attempt to make the one page app look similar to the mock-up from the user story. My approach was to have a bare bones HTML with no elements defined. All the heavy-lifting is done in JS (JavaScript). I did that in order to demonstrate JS abilities and how it all can be self-contained. I used various DOM [selection methods](https://www.javascripttutorial.net/javascript-dom/javascript-queryselector/) to demonstrate different ways to query objects and how they can be further manipulated. Also used different styles to listen to events and do actions on them. It's worth saying that this is not the best approach and more of a round-about method to achieve user-story objective. However, this approach was chosen to show different sides of JS for the sake of demonstration. [Live Page](https://rkutsel.github.io/js-dom-code-quiz/)
 
 ## User Story
 

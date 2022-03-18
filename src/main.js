@@ -74,51 +74,52 @@ sectionSecond.appendChild(sectionSecondInput);
 //Attributes for static elements.
 document.body.setAttribute(
   "style",
-  "display: inline-flex; flex-direction: column; align-content: center; justify-content: center; align-items: center; row-gap: 50px; background-color: #9c8a9c"
+  "display: flex; flex-flow: column wrap; justify-content: space-between; row-gap: 50px; background-color: #9c8a9c; margin: auto"
 );
 headerFirst.setAttribute("tittle", "Timed Quiz");
 headerFirst.setAttribute(
   "style",
-  "display: flex; align-content: center; align-items: center; flex-flow: row wrap; flex: 1 100%"
+  "width: 100%; display: flex; align-content: center; align-items: center; flex-flow: row wrap; flex: 1 1 auto; margin: auto; "
 );
 headerAnchor.setAttribute("href", "#this");
 headerAnchor.setAttribute("id", "anchor");
 headerAnchor.setAttribute(
   "style",
-  "width: 600px; font-size: 25px; color: #962686"
+  "width: 49%; font-size: 25px; color: #962686"
 );
 headerParagraph.setAttribute("id", "timer");
 headerParagraph.setAttribute(
   "style",
-  "width: 600px; display: flex; justify-content: flex-end; font-size: 25px; color: #962686"
+  "width: 49%; display: flex; justify-content: flex-end; font-size: 25px; color: #962686"
 );
 sectionFirst.setAttribute(
   "style",
-  "width: 500px; display: flexbox; flex-flow: row wrap; justify-content: center; align-content: center; align-self: center; "
+  "  flex-flow: row wrap; justify-content: center; align-content: center; align-self: center; "
 );
 sectionFirstH1.setAttribute(
   "style",
-  "display: flexbox; width: 450px; background-color: #b854a9; padding: 40px 40px; border: 2px solid #9c989c; border-radius: 10px; color: white; text-align: center; font-size: 20px; margin-right: 100px; "
+  "display: flex; justify-content: center;  background-color: #b854a9; padding: 40px 40px; border: 2px solid #9c989c; border-radius: 10px; color: white; text-align: center; font-size: 20px; "
 );
 sectionFirstParagraph.setAttribute(
   "style",
-  "display: flexbox; width: 400px; background-color: #b854a9; border: 2px solid #9c989c; border-radius: 15px; color: white; text-align: center; font-size: 25px; margin-bottom: 15px; position relative; margin: 60px"
+  "  background-color: #b854a9; border: 2px solid #9c989c; border-radius: 15px; color: white; text-align: center; font-size: 25px; margin-bottom: 15px; "
 );
 sectionSecond.setAttribute("id", "second-section");
 sectionSecond.setAttribute(
   "style",
-  "width: 300px; display: flex; flex-flow: row wrap;  justify-content: center; color: #962686;"
+  "width: 100%; display: flex; flex-direction: column; align-items: center;  color: #962686;"
 );
 sectionSecondParagraph.setAttribute(
   "style",
-  "color: #962686; font-size: 18px; margin: 25px;"
+  "display: flex; justify-content: center; color: #962686; font-size: 18px; margin: 25px;"
 );
 sectionSecondInput.setAttribute("type", "submit");
 sectionSecondInput.setAttribute("value", "Start Quiz");
 sectionSecondInput.setAttribute("id", "start-quiz");
+sectionSecondH1.setAttribute("style", "display: flex; justify-content: center");
 sectionSecondInput.setAttribute(
   "style",
-  "display: flexbox; background-color: #962686; border-radius: 15px; color: white; padding: 10px 10px; text-align: center; font-size: 25px; margin-bottom: 15px;"
+  "display: flex; justify-content: center; align-self: center; background-color: #962686; border-radius: 15px; color: white; padding: 10px 10px; text-align: center; font-size: 25px; margin: auto; "
 );
 
 headerAnchor.textContent = "View Highscores";
@@ -138,7 +139,10 @@ function constructButtons() {
   sectionFirstOl.appendChild(sectionFirstLi3);
   sectionFirst.appendChild(sectionFirstParagraph);
 
-  // sectionFirstOl.setAttribute("style", "display: flexbox;");
+  sectionFirstOl.setAttribute(
+    "style",
+    "display: flex; flex-direction: column; justify-content: center;  align-items: center"
+  );
   sectionFirstLi1.setAttribute("id", "li li-01");
   sectionFirstLi2.setAttribute("id", "li li-02");
   sectionFirstLi3.setAttribute("id", "li li-03");
@@ -169,7 +173,7 @@ let styleButtons = () => {
   for (i = 0; i < liSelect().length; i++) {
     liSelect()[i].setAttribute(
       "style",
-      "list-style: none; background-color: #962686; border-radius: 15px; color: white; padding: 10px 10px; text-align: center; font-size: 25px; margin-bottom: 15px;"
+      "list-style: none; width: 150px; background-color: #962686; border-radius: 15px; color: white; padding: 10px 10px; text-align: center; font-size: 25px; margin-bottom: 15px;"
     );
   }
 };
@@ -179,7 +183,7 @@ let styleEffects = (selector) => {
     selector[i].addEventListener("mouseover", (event) => {
       event.currentTarget.setAttribute(
         "style",
-        "list-style: none; background-color: #b854a9; border: 4px solid #9c989c; border-radius: 15px; color: white; padding: 12px 12px; text-align: center; font-size: 25px; margin-bottom: 15px; transition: all 0.1s ease-out"
+        "list-style: none; width: 150px; background-color: #b854a9; border: 4px solid #9c989c; border-radius: 15px; color: white; padding: 12px 12px; text-align: center; font-size: 25px; margin-bottom: 15px; transition: all 0.1s ease-out"
       );
     });
   }
@@ -187,7 +191,7 @@ let styleEffects = (selector) => {
     selector[i].addEventListener("mouseout", (event) => {
       event.currentTarget.setAttribute(
         "style",
-        "list-style: none; background-color: #962686; border-radius: 15px; color: white; padding: 10px 10px; text-align: center; font-size: 25px; margin-bottom: 15px;"
+        "list-style: none; width: 150px; background-color: #962686; border-radius: 15px; color: white; padding: 10px 10px; text-align: center; font-size: 25px; margin-bottom: 15px;"
       );
     });
   }
@@ -213,7 +217,7 @@ function startQuiz() {
     }
   }
 
-  sectionFirstH1.innerHTML = `<pre>${quizQuestion1[0]}</pre> ${quizQuestion1[1]}`;
+  sectionFirstH1.innerHTML = `${quizQuestion1[0]} <br> ${quizQuestion1[1]}`;
   sectionFirstLi1.textContent = quizQuestion1[2];
   sectionFirstLi2.textContent = quizQuestion1[3];
   sectionFirstLi3.textContent = quizQuestion1[4];
@@ -299,7 +303,7 @@ function submitScore() {
 
   sectionFirst.setAttribute(
     "style",
-    "display: flexbox; align-content: center; align-items: center; flex-flow: column wrap; flex: 1 100%"
+    "display: flex; align-content: center; align-items: center; flex-flow: column wrap; flex: 1 100%"
   );
   sectionFirstH1.setAttribute("style", "color: #962686");
   sectionFirstInput.setAttribute("type", "text");
@@ -353,14 +357,11 @@ function renderResults() {
   let sectionSecond = document.createElement("section");
   let sectionSecondH1 = document.createElement("h1");
   let sectionSecondOl = document.createElement("ol");
-  let sectionSecondLi = document.createElement("li");
 
   document.body.appendChild(sectionFirst);
   document.body.appendChild(sectionSecond);
   sectionFirst.appendChild(sectionFirstH1);
   sectionFirst.appendChild(sectionFirstInput);
-  sectionSecond.appendChild(sectionSecondH1);
-  sectionSecond.appendChild(sectionSecondOl);
 
   sectionFirstH1.textContent = `${Object.keys(
     highScoresObject
@@ -379,11 +380,14 @@ function renderResults() {
   //   }
   // }
 
+  sectionFirst.setAttribute(
+    "style",
+    "display: flex; align-content: center; align-items: center; flex-flow: column wrap; flex: 1 100%"
+  );
   sectionFirstH1.setAttribute("style", "color: #962686");
-
   sectionFirstInput.setAttribute(
     "style",
-    "display: flexbox; background-color: #962686; border-radius: 15px; color: white; padding: 10px 10px; text-align: center; font-size: 25px; margin: 45px;"
+    "display: flex; background-color: #962686; border-radius: 15px; color: white; padding: 10px 10px; text-align: center; font-size: 25px; margin: 45px;"
   );
   sectionFirstInput.setAttribute("type", "submit");
   sectionFirstInput.setAttribute("value", "Reload");
