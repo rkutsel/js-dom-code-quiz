@@ -355,8 +355,6 @@ function renderResults() {
   let sectionFirstInput = document.createElement("input");
 
   let sectionSecond = document.createElement("section");
-  let sectionSecondH1 = document.createElement("h1");
-  let sectionSecondOl = document.createElement("ol");
 
   document.body.appendChild(sectionFirst);
   document.body.appendChild(sectionSecond);
@@ -366,19 +364,6 @@ function renderResults() {
   sectionFirstH1.textContent = `${Object.keys(
     highScoresObject
   )} your current highest score is ${highScore}`;
-
-  // for (i = 0; i < Object.keys(localStorage).length; i++) {
-  //   console.log(Object.keys(localStorage)[i], Object.values(localStorage)[i]);
-  //   sectionSecondOl.append(sectionSecondLi);
-  // }
-
-  // for (i = 0; i < Object.keys(localStorage).length; i++) {
-  //   if (i) {
-  //     sectionSecondOl.children[i].textContent = `${
-  //       Object.keys(localStorage)[i]
-  //     } highest score is ${Object.values(localStorage)[i]}`;
-  //   }
-  // }
 
   sectionFirst.setAttribute(
     "style",
@@ -401,11 +386,61 @@ function renderResults() {
 }
 
 function renderHighScores() {
-  anchor = document.querySelector("#anchor");
-  anchor.addEventListener("click", (event) => {
-    event.preventDefault();
-    event = event.target;
-    renderResults();
+  let selectSectionEl = document.querySelectorAll("section");
+
+  for (i = 0; i < selectSectionEl.length; i++) {
+    selectSectionEl[i].remove();
+    console.log(selectSectionEl[i]);
+  }
+
+  let sectionFirst = document.createElement("section");
+  let sectionFirstH1 = document.createElement("h1");
+  let sectionFirstOl = document.createElement("ol");
+  let sectionFirstLi1 = document.createElement("li");
+  let sectionFirstLi2 = document.createElement("li");
+  let sectionFirstLi3 = document.createElement("li");
+  let sectionFirstLi4 = document.createElement("li");
+  let sectionFirstLi5 = document.createElement("li");
+  let sectionFirstInput = document.createElement("input");
+
+  document.body.appendChild(sectionFirst);
+  sectionFirst.appendChild(sectionFirstH1);
+  sectionFirst.appendChild(sectionFirstOl);
+  sectionFirstOl.appendChild(sectionFirstLi1);
+  sectionFirstOl.appendChild(sectionFirstLi2);
+  sectionFirstOl.appendChild(sectionFirstLi3);
+  sectionFirstOl.appendChild(sectionFirstLi4);
+  sectionFirstOl.appendChild(sectionFirstLi5);
+  sectionFirstOl.appendChild(sectionFirstInput);
+
+  sectionFirstOl.setAttribute(
+    "style",
+    "display: flex; align-content: center; align-items: center; flex-flow: column wrap; flex: 1 100%"
+  );
+
+  styleButtons();
+
+  for (i = 0; i <= 4; i++) {
+    if (!Object.keys(localStorage)[i]) {
+      sectionFirstOl.children[i].textContent = "N/A";
+    } else {
+      sectionFirstOl.children[i].textContent = `${
+        Object.keys(localStorage)[i]
+      } highest score is ${Object.values(localStorage)[i]}`;
+    }
+  }
+  sectionFirstInput.setAttribute(
+    "style",
+    "display: flex; background-color: #962686; border-radius: 15px; color: white; padding: 10px 10px; text-align: center; font-size: 25px; margin: 45px;"
+  );
+  sectionFirstInput.setAttribute("type", "submit");
+  sectionFirstInput.setAttribute("value", "Reload");
+
+  sectionFirstInput.addEventListener("click", (event) => {
+    let selection = event.target;
+    if (selection) {
+      location.reload();
+    }
   });
 }
 
@@ -439,7 +474,15 @@ function initApp() {
   // Removes <section> elements
   let quizButton = document.querySelector("#start-quiz");
   let selectSecondSection = document.querySelector("#second-section");
-  styleEffects(submitSelect());
+
+  let selectAnchor = document.querySelector("#anchor");
+
+  selectAnchor.addEventListener("click", function (event) {
+    selector = event.target;
+    if (selector) {
+      renderHighScores();
+    }
+  });
 
   quizButton.addEventListener("click", function () {
     if (selectSecondSection) {
@@ -449,7 +492,6 @@ function initApp() {
       startQuiz();
     }
   });
-  // renderHighScores();
 }
 
 //Launch App
