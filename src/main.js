@@ -413,10 +413,15 @@ function renderHighScores() {
   sectionFirstOl.appendChild(sectionFirstLi5);
   sectionFirstOl.appendChild(sectionFirstInput);
 
+  sectionFirstH1.setAttribute(
+    "style",
+    " display: flex; justify-content: center; margin-left: 30px; color: #962686"
+  );
   sectionFirstOl.setAttribute(
     "style",
     "display: flex; align-content: center; align-items: center; flex-flow: column wrap; flex: 1 100%"
   );
+  sectionFirstH1.innerHTML = "Highscores of others";
 
   styleButtons();
 
@@ -426,7 +431,7 @@ function renderHighScores() {
     } else {
       sectionFirstOl.children[i].textContent = `${
         Object.keys(localStorage)[i]
-      } highest score is ${Object.values(localStorage)[i]}`;
+      }: ${Object.values(localStorage)[i]}`;
     }
   }
   sectionFirstInput.setAttribute(
